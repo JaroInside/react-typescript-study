@@ -1,17 +1,19 @@
 import * as React from 'react';
 import './App.css';
 
-export interface AppProps {
+import StatelessComponent from './stateLess/stateless';
+
+interface AppProps {
   name?: string;
 }
 
-export interface AppState {
+interface AppState {
   age: number;
 }
 
 class App extends React.Component<AppProps, AppState> {
 
-  public static defaultProps = {
+  static defaultProps = {
     name: 'Jaro'
   };
 
@@ -76,6 +78,9 @@ class App extends React.Component<AppProps, AppState> {
         <h2>Hello {name} / {age}</h2>
         <button onClick={this._addAge}>나이추가</button>
         <button onClick={this._reset}>리셋</button>
+
+        <StatelessComponent>Children</StatelessComponent>
+
       </div>
     );
   }
